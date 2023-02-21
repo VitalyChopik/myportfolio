@@ -1,13 +1,70 @@
 .footer {
   padding: rem(20) 0;
-  background: $blackColor;
-  // .footer__container
+  background: #031F18;
+
   &__container {
     display: flex;
     align-items: center;
+
     @include media(510) {
       flex-direction: column;
       align-items: flex-start;
     }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: rem(40);
+  }
+
+  &__contacts-link {
+    margin-right: rem(30);
+    max-height: 52px;
+
+    &.upwork {
+      transform: translateY(10px);
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item {
+    padding: 0 10px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: #ffffff;
+      top: 7px;
+      bottom: 0;
+      right: 0;
+      height: rem(30);
+      width: 1px;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: rem(30);
+    line-height: rem(37);
+    text-transform: uppercase;
   }
 }

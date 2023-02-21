@@ -1,0 +1,122 @@
+.banner {
+  position: relative;
+  padding-top: rem(20);
+  min-height: 100vh;
+
+  &__item {
+    position: absolute;
+    z-index: -1;
+
+    &.item-1 {
+      left: 6.41%;
+      top: -10%;
+
+    }
+
+    &.item-2 {
+      top: rem(50);
+      left: 51.77%;
+    }
+
+    &.item-3 {
+      right: 0;
+      top: 0;
+      transform: translate3d(35%, -35%, 0);
+    }
+
+    &.item-4 {
+      left: rem(20);
+      bottom: rem(20);
+    }
+
+    &.item-5 {
+      bottom: rem(20);
+      right: 15.36%;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__contacts-link {
+    margin-right: rem(30);
+
+    &.upwork {
+      transform: translateY(10px);
+    }
+  }
+
+  &__contacts-img {}
+
+  &__container {
+    position: relative;
+  }
+
+  &__nav-list {
+    position: absolute;
+    right: 0;
+    margin-top: rem(50);
+  }
+
+  &__nav-item {
+    margin-bottom: rem(30);
+  }
+
+  &__nav-link {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: rem(30);
+    line-height: rem(37);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-top: rem(200);
+    font-weight: 800;
+    font-size: rem(90);
+    line-height: rem(108);
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+
+    span {
+      font-family: 'Exo 2', sans-serif;
+    }
+  }
+
+  &__status {
+    margin-left: rem(80);
+  }
+
+  &__position {
+    color: #000000;
+    margin-left: rem(165);
+    text-shadow:
+      -0 -2px 0 #30F3C2,
+      0 -2px 0 #30F3C2,
+      -0 2px 0 #30F3C2,
+      0 2px 0 #30F3C2,
+      -2px -0 0 #30F3C2,
+      2px -0 0 #30F3C2,
+      -2px 0 0 #30F3C2,
+      2px 0 0 #30F3C2,
+      -1px -2px 0 #30F3C2,
+      1px -2px 0 #30F3C2,
+      -1px 2px 0 #30F3C2,
+      1px 2px 0 #30F3C2,
+      -2px -1px 0 #30F3C2,
+      2px -1px 0 #30F3C2,
+      -2px 1px 0 #30F3C2,
+      2px 1px 0 #30F3C2,
+      -2px -2px 0 #30F3C2,
+      2px -2px 0 #30F3C2,
+      -2px 2px 0 #30F3C2,
+      2px 2px 0 #30F3C2,
+      -2px -2px 0 #30F3C2,
+      2px -2px 0 #30F3C2,
+      -2px 2px 0 #30F3C2,
+      2px 2px 0 #30F3C2;
+  }
+}

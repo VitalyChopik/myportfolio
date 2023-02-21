@@ -1,1 +1,20 @@
 // Заголовки, общие БЄМ блоки и проче...
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.section__title {
+  font-weight: 700;
+  font-size: rem(90);
+  line-height: 92%;
+  letter-spacing: 0.03em;
+}
