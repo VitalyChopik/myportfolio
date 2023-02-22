@@ -65,3 +65,9 @@ const mousePrlx = new MousePRLX({})
 /* Раскомментировать для использования */
 // togglePopupWindows()
 // =======================================================================================================
+
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
