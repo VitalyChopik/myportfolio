@@ -1,4 +1,5 @@
 // Заголовки, общие БЄМ блоки и проче...
+
 img {
   max-width: 100%;
 }
@@ -17,4 +18,186 @@ h6 {
   font-size: rem(90);
   line-height: 92%;
   letter-spacing: 0.03em;
+
+  @include media(991) {
+    font-size: rem(44);
+  }
+
+  transition: all 0.5s;
+
+  &:hover {
+    transform: rotate(-2deg);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes item1 {
+  0% {
+    left: 6.41%;
+    top: -10%;
+  }
+
+  25% {
+    left: 26.41%;
+    top: 90%;
+  }
+
+  50% {
+    left: 100.41%;
+    top: 76%;
+  }
+
+  75% {
+    left: 75%;
+    top: 43%;
+  }
+
+  100% {
+    left: 6.41%;
+    top: -10%;
+  }
+}
+
+@keyframes item2 {
+  0% {
+    top: rem(50);
+    left: 51.77%;
+  }
+
+  25% {
+    top: 100%;
+    left: 51.77%;
+  }
+
+  50% {
+    top: 87%;
+    left: 1%;
+  }
+
+  75% {
+    left: 100%;
+    top: 43%;
+  }
+
+  100% {
+    top: rem(50);
+    left: 51.77%;
+  }
+}
+
+@keyframes item3 {
+  0% {
+    right: 0;
+    top: 0;
+    transform: rotate(0) translate3d(35%, -35%, 0);
+  }
+
+  25% {
+    transform: rotate(45deg) translate3d(35%, -35%, 0);
+  }
+
+  50% {
+    right: 2%;
+    top: 50%;
+    transform: rotate(20deg) translate3d(35%, -35%, 0);
+  }
+
+  75% {
+    transform: rotate(-45deg) translate3d(35%, -35%, 0);
+  }
+
+  100% {
+    right: 0;
+    top: 0;
+    transform: rotate(0) translate3d(35%, -35%, 0);
+  }
+}
+
+@keyframes item4 {
+  0% {
+    left: rem(20);
+    bottom: rem(20);
+  }
+
+  25% {
+    left: 120%;
+    bottom: 80%;
+  }
+
+
+  75% {
+    left: 20%;
+    bottom: 20%;
+  }
+
+  100% {
+    left: rem(20);
+    bottom: rem(20);
+  }
+}
+
+@keyframes item5 {
+  0% {
+    bottom: rem(20);
+    transform: rotate(0);
+  }
+
+  50% {
+    bottom: rem(30);
+    transform: rotate(10deg);
+  }
+
+  100% {
+    bottom: rem(20);
+    transform: rotate(0);
+  }
+}
+
+@keyframes textStatus {
+  0% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes textPosition {
+  0% {
+    transform: translate3d(100%, 0%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes textName {
+  0% {
+    transform: translate3d(-15%, 15%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes skillsPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

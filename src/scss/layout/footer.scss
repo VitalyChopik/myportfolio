@@ -23,10 +23,10 @@
     display: flex;
     align-items: flex-end;
     margin-bottom: rem(40);
+    gap: rem(40);
   }
 
   &__contacts-link {
-    margin-right: rem(30);
     max-height: 52px;
 
     &.upwork {
@@ -51,6 +51,11 @@
       right: 0;
       height: rem(30);
       width: 1px;
+
+      @include media(991) {
+        top: 3.5px;
+        height: rem(20);
+      }
     }
 
     &:last-child {
@@ -66,5 +71,10 @@
     font-size: rem(30);
     line-height: rem(37);
     text-transform: uppercase;
+
+    @include media(991) {
+      font-size: rem(20);
+      line-height: rem(24);
+    }
   }
 }

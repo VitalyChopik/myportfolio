@@ -2,6 +2,10 @@
   &__page {
     padding-top: rem(130);
     padding-bottom: rem(150);
+
+    @include media(991) {
+      padding-top: rem(40);
+    }
   }
 
   &__title {
@@ -30,6 +34,10 @@
         line-height: 92%;
         letter-spacing: 0.03em;
         color: #ABBCB8;
+
+        @include media(991) {
+          font-size: rem(18);
+        }
       }
 
       input {
@@ -40,6 +48,10 @@
       textarea {
         padding-top: rem(30);
         min-height: rem(340);
+
+        @include media(600) {
+          min-height: rem(200);
+        }
       }
 
       input::placeholder,
@@ -49,6 +61,10 @@
         line-height: 92%;
         letter-spacing: 0.03em;
         color: #ABBCB8;
+
+        @include media(991) {
+          font-size: rem(18);
+        }
       }
     }
   }
@@ -67,7 +83,13 @@
       color: #FFFFFF;
       margin-bottom: rem(20);
       cursor: pointer;
+
+      @include media(991) {
+        font-size: rem(20);
+      }
     }
+
+
   }
 
   .form__submit {
@@ -87,5 +109,10 @@
     line-height: 92%;
     letter-spacing: 0.03em;
     color: #FFFFFF;
+
+    @include media(600) {
+      margin-left: auto;
+      margin-right: rem(-40);
+    }
   }
 }

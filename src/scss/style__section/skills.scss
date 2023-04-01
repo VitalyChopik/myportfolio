@@ -1,16 +1,29 @@
 .skills {
   &__page {
     padding-top: rem(200);
+
+    @include media(991) {
+      padding-top: rem(100);
+    }
   }
 
   &__title {
     margin-bottom: rem(60);
+
+    @include media(1150) {
+      text-align: center;
+    }
   }
 
   &__block {
     display: flex;
     justify-content: space-between;
     max-width: rem(1200);
+
+    @include media(1150) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__box {
@@ -22,6 +35,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: rem(30);
+
+    @include media(600) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__name {
@@ -30,6 +48,10 @@
     line-height: 92%;
     letter-spacing: 0.03em;
     color: #ECFFFA;
+
+    @include media(600) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__circles {
@@ -42,9 +64,27 @@
     width: rem(18);
     height: rem(18);
     margin-right: rem(16);
+    transition: all 0.5s;
+    cursor: pointer;
+
+    .active & {
+      &.active {
+        background: red;
+        animation: skillsPulse 0.2s linear infinite;
+      }
+    }
 
     &.active {
       background: #30F3C2;
+    }
+
+    &.item {
+      background: red;
+    }
+
+    &:active,
+    &:hover {
+      background: #ffffff;
     }
   }
 }
