@@ -18,7 +18,7 @@ import {
 import { MousePRLX } from './libs/parallaxMouse'
 
 /* Раскомментировать для использования */
-import AOS from 'aos'
+// import AOS from 'aos'
 
 /* Раскомментировать для использования */
 // import Swiper, { Navigation, Pagination } from 'swiper'
@@ -43,7 +43,7 @@ isWebp()
 /* Библиотека для анимаций ===============================================================================
  *  документация: https://michalsnik.github.io/aos
  */
-AOS.init();
+// AOS.init();
 // =======================================================================================================
 
 // Паралакс мышей ========================================================================================
@@ -66,32 +66,30 @@ const mousePrlx = new MousePRLX({})
 // togglePopupWindows()
 // =======================================================================================================
 
-const skillsBoxs = document.querySelectorAll('.skills__circles'),
-  slillsLevel = document.querySelectorAll('.skills__circle'),
-  bannerItems = document.querySelectorAll('.banner__item');
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsBoxs = document.querySelectorAll('.skills__circles'),
+    slillsLevel = document.querySelectorAll('.skills__circle'),
+    bannerItems = document.querySelectorAll('.banner__item');
 
-function getRandomArbitrary(start, end) {
-  return Math.floor(Math.random() * (end - start + 1)) + start;
-}
+  function getRandomArbitrary(start, end) {
+    return Math.floor(Math.random() * (end - start + 1)) + start;
+  }
 
 
-let activeBox = setTimeout(function boxRandom() {
-  skillsBoxs.forEach(item => {
-    item.classList.remove('active');
-  });
-  const randomItem = getRandomArbitrary(1, skillsBoxs.length);
-  skillsBoxs[randomItem - 1].classList.add('active');
-  activeBox = setTimeout(boxRandom, 4000); // (*)
-}, 4000);
+  let activeBox = setTimeout(function boxRandom() {
+    skillsBoxs.forEach(item => {
+      item.classList.remove('active');
+    });
+    const randomItem = getRandomArbitrary(0, skillsBoxs.length - 1);
+    skillsBoxs[randomItem].classList.add('active');
+    activeBox = setTimeout(boxRandom, 4000); // (*)
+  }, 4000);
 
-slillsLevel.forEach(item => {
-  item.addEventListener('click', () => {
-    const randomItem = getRandomArbitrary(1, bannerItems.length);
-    if (bannerItems[randomItem - 1].classList.contains('hidden')) {
-      bannerItems[randomItem - 1].classList.remove('hidden');
-    } else {
-      bannerItems[randomItem - 1].classList.add('hidden');
-    }
-
-  });
+  slillsLevel.forEach(item => {
+    item.addEventListener('click', () => {
+      const randomItem = getRandomArbitrary(1, bannerItems.length);
+      bannerItems[randomItem].classList.toggle('hidden')
+    });
+  })
 })
+

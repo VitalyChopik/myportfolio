@@ -109,6 +109,7 @@
     line-height: 92%;
     letter-spacing: 0.03em;
     color: #FFFFFF;
+    cursor: pointer;
 
     @include media(600) {
       margin-left: auto;
