@@ -1,12 +1,17 @@
 <?php get_header();?> 
 <section class="banner banner__page">
         <div class="banner__container">
-          <div class="banner__contacts"><a href="#"
-              class="banner__contacts-link telegram"><img src="<?php echo get_template_directory_uri();?>/images/icons/telegram.svg" alt=""
-                class="banner__contacts-img"> </a><a href="#" class="banner__contacts-link linkedin"><img
-                src="<?php echo get_template_directory_uri();?>/images/icons/linkedin.svg" alt="" class="banner__contacts-img"> </a><a href="#"
-              class="banner__contacts-link upwork"><img src="<?php echo get_template_directory_uri();?>/images/icons/upwork.svg" alt=""
-                class="banner__contacts-img"></a></div>
+          <div class="banner__contacts">
+            <a href="https://t.me/vitalychopik" class="banner__contacts-link telegram">
+              <img src="<?php echo get_template_directory_uri();?>/images/icons/telegram.svg" alt="" class="banner__contacts-img">
+            </a>
+            <a href="https://www.linkedin.com/in/vitaly-chopik-3ab6891ba/" class="banner__contacts-link linkedin">
+              <img src="<?php echo get_template_directory_uri();?>/images/icons/linkedin.svg" alt="" class="banner__contacts-img">
+            </a>
+            <a href="https://www.upwork.com/freelancers/~01b80e80bcc63c6b65" class="banner__contacts-link upwork">
+              <img src="<?php echo get_template_directory_uri();?>/images/icons/upwork.svg" alt="" class="banner__contacts-img">
+            </a>
+          </div>
           <ul class="banner__nav-list" >
             <li class="banner__nav-item"><a href="#skills" class="banner__nav-link">&lt;skills&gt;</a></li>
             <li class="banner__nav-item"><a href="#projekts" class="banner__nav-link">&lt;projekts&gt;</a></li>
@@ -113,38 +118,54 @@
           </section>
           <?php endwhile; ?>
         <?php endif; ?>
-      <section class="project project__page" id="projekts">
-        <div class="project__container">
-          <h2 class="section__title project__title">My projects</h2>
-          <div class="project__block">
-            <div class="project__element" >
-              <div class="project__box">
-                <div class="project__box-image"><a href="#" class="project__box-arrow"><img
-                      src="<?php echo get_template_directory_uri();?>/images/icons/project__arrow.svg" alt=""></a>
-                  <picture>
-                    <source srcset="<?php echo get_template_directory_uri();?>/images/project/project-1.webp" type="image/webp"><img
-                      src="<?php echo get_template_directory_uri();?>/images/project/project-1.png" alt="" class="project__box-thumbnail">
-                  </picture>
-                </div><a href="#" class="project__box-title">DAMNN! - lrelregmrekgenglnrkrlegk</a>
-                <p class="project__box-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Sit amet est placerat in egestas erat imperdiet
-                  sed. Scelerisque varius morbi enim nunc faucibus a. Commodo quis imperdiet massa tincidunt</p>
+        <?php		
+          global $post;
+
+          $query = new WP_Query( [
+            'posts_per_page' => -1,
+          ] );
+
+          if ( $query->have_posts() ) {
+            ?>
+            <section class="project project__page" id="projekts">
+              <div class="project__container">
+                <h2 class="section__title project__title">My projects</h2>
+                <div class="project__block">
+            <?php
+            while ( $query->have_posts() ) {
+              $query->the_post();
+              ?>
+              <div class="project__element" >
+                <div class="project__box">
+                  <div class="project__box-image" style="background-color:<?php the_field('background');?>">
+                    <a href="<?php the_field('project__link')?>" class="project__box-arrow">
+                      <img src="<?php echo get_template_directory_uri();?>/images/icons/project__arrow.svg" alt="">
+                    </a>
+                    <?php the_post_thumbnail('full', ['class' => "project__box-thumbnail"]);?>
+                  </div>
+                  <a href="<?php the_field('project__link')?>" class="project__box-title"><?php the_title()?></a>
+                  <p class="project__box-excerpt"><?php the_excerpt();?></p>
+                </div>
+              </div>
+              <?php 
+            }
+            ?>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+            <?php
+          }
+
+          wp_reset_postdata(); // Сбрасываем $post
+        ?>
+
+
+
       <section class="form form__page" id="contacts">
         <div class="form__container">
           <h2 class="section__title form__title">Contact me</h2>
           <div class="form__block">
-            <form action="#"><label class="form__label"><span class="input__title">Full name</span> <input type="text"
-                  name="name" placeholder="Enter your full name ..."></label> <label class="form__label"><span
-                  class="input__title">Email</span> <input type="email" name="email"
-                  placeholder="Enter your email..."></label> <label class="form__label"><span
-                  class="input__title">Message</span> <textarea name="message"
-                  placeholder="Enter your message..."></textarea></label> <input type="submit" value="SEND"
-                class="form__submit"></form>
+            <?php echo do_shortcode('[contact-form-7 id="61" title="contact form"]')?>
           </div>
         </div>
       </section>

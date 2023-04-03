@@ -5,3 +5,21 @@
 html {
   scroll-behavior: smooth;
 }
+
+.form__block form input,
+.form__block form textarea {
+  width: 100%;
+}
+
+.form__block p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__block br {
+  display: none;
+}
+
+.form .form__submit {}
